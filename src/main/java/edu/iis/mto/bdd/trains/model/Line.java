@@ -1,6 +1,7 @@
 package edu.iis.mto.bdd.trains.model;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 import com.google.common.collect.ImmutableList;
@@ -20,7 +21,7 @@ public class Line {
     private Line(String line, String departingFrom, List<String> stations) {
         this.line = line;
         this.departingFrom = departingFrom;
-        this.stations = stations;
+        this.stations = Collections.unmodifiableList(List.copyOf(stations));
     }
 
     public String getDepartingFrom() {
