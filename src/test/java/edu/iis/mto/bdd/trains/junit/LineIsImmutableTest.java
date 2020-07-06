@@ -24,7 +24,6 @@ public class LineIsImmutableTest {
     @Test
     public void stationsCanNotBeModifiedAfterLineCreation() throws Exception {
         inputStations[0] = "station 99";
-
         assertThat(sampleLine.getStations(), is(Arrays.asList(inputStationsCopy)));
     }
 
